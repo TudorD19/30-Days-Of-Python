@@ -1,12 +1,13 @@
 #Day 15 - Syntax errors 
 
 #syntax error
-print 'hello world'
+
+#print 'hello world'
 print('hello world')
 
 #name error
-print(age)
 
+#print(age)
 age = 20
 print(age)
 
