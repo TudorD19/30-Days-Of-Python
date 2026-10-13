@@ -50,3 +50,21 @@ print(is_valid_variable('first_name')) # True
 print(is_valid_variable('first-name')) # False
 print(is_valid_variable('1first_name')) # False
 print(is_valid_variable('firstname')) # True
+
+sentence = '''%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?'''
+def clean_text(sentence):
+    r_pattern_3 = r'[^A-Za-z ]'
+    new_sentence = re.sub(r_pattern_3, '', sentence)
+    return new_sentence
+print(clean_text(sentence))
+sentence_cleaned = clean_text(sentence)
+words_sentence = re.split(' ', sentence_cleaned)
+print(words_sentence)
+words_sentence_dict = {}
+for word in words_sentence:
+    if word in words_sentence_dict:
+        words_sentence_dict[word] += 1
+    else:
+        words_sentence_dict[word] = 1
+words_sentence_sorted = sorted(words_sentence_dict.items(), key = lambda pair: pair[1], reverse=True)
+print(words_sentence_sorted[:3]) 
