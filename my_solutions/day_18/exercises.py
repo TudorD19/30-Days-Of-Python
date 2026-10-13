@@ -38,3 +38,15 @@ print(sorted_points)
 
 distance = sorted_points[-1] - sorted_points[0]
 print(distance)
+
+def is_valid_variable(variable_name):
+    r_pattern_2 = r'[A-Za-z][A-Za-z0-9_]*'
+    if  re.fullmatch(r_pattern_2, variable_name) is not None:
+        return True
+    else:
+        return False
+
+print(is_valid_variable('first_name')) # True
+print(is_valid_variable('first-name')) # False
+print(is_valid_variable('1first_name')) # False
+print(is_valid_variable('firstname')) # True
